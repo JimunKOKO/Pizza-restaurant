@@ -1,0 +1,36 @@
+body{
+    background:#f8f1e6;color:#332820;min-height:100vh
+}
+.navbar{
+    background:#17120f
+}
+.dashboard-card{
+    border:0;
+    border-radius:15px;
+    box-shadow:0 5px 20px #0001
+}
+.sidebar-menu .list-group-item{
+    border:0;padding:12px 20px;
+    font-weight:600;
+    border-radius:10px!important;
+    margin-bottom:5px
+}
+.sidebar-menu .list-group-item.active{
+    background:#c9362b;
+    color:white
+}
+.avatar-circle{
+width:80px;
+    height:80px;
+    background:#f8f1e6;
+    color:#c9362b;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    font-size:36px;
+    margin:auto
+}
+.stat-box{
+    background:#f8f1e6;
+    border-radius:12px;
+    padding:20px}

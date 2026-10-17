@@ -1,0 +1,32 @@
+const form=document.getElementById('authForm'),toggle=document.getElementById('toggleAuth');
+let registering=false;
+
+function render(){
+    let u=JSON.parse(localStorage.getItem('pizzaCurrentUser')||'null');
+    form.hidden=!!u;toggle.parentElement.hidden=!!u;
+    document.getElementById('loggedIn').hidden=!u;
+
+
+    if(u){document.getElementById('welcome').textContent='Welcome, '+u.name;
+
+        return}document.getElementById('nameGroup').hidden=!registering;
+        document.getElementById('authName').required=registering;
+
+        document.getElementById('submitBtn').textContent=registering?'Register':'Login';document.getElementById('authSubtitle').textContent=registering?'Create an account':'Login to your account';
+        toggle.textContent=registering?'Already have an account? Login':'Create an account'}
+toggle.onclick=e=>{e.preventDefault();registering=!registering;render()};
+form.onsubmit=e=>
+    {e.preventDefault();const email=document.getElementById('authEmail').value.trim().toLowerCase(),password=document.getElementById('authPassword').value,name=document.getElementById('authName').value.trim();
+        let accounts=JSON.parse(localStorage.getItem('pizzaDemoAccounts')||'[]');
+        let account;if(registering){if(!name)return alert('Enter your name');
+            
+            if(accounts.some(a=>a.email===email))return alert('Email already registered');
+            account={name,email,password};accounts.push(account);
+            
+            localStorage.setItem('pizzaDemoAccounts',JSON.stringify(accounts))
+        }else{account=accounts.find(a=>a.email===email&&a.password===password);
+            if(!account)return alert('Incorrect email or password')}localStorage.setItem('pizzaCurrentUser',JSON.stringify({name:account.name,email:account.email}));window.location.href='index.html'};
+document.getElementById('logoutBtn').onclick=()=>{localStorage.removeItem('pizzaCurrentUser');
+    render()
+};
+    render();

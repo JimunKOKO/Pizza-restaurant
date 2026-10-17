@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home - Pizza Kon Khmer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="pizza.css" rel="stylesheet">
+    <script defer src="pizza.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand brand-logo-text" href="index.html">
+            <span class="text-danger-accent">PIZZA</span>
+             <span class="text-highlight">Kon Khmer</span>
+            </a>
+                <button
+                class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li><a class="nav-link" href="index.html#menu">Menu</a></li>
+                    <li><a class="nav-link" href="index.html#about">About</a></li>
+                    <li><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="d-flex gap-2 align-items-center ms-lg-3 flex-wrap">
+                    <a id="accountBtn" href="acc.html" class="btn btn-outline-warning">
+                        <i class="bi bi-person-circle"></i> 
+                        <span id="accountBtnText">Account</span>
+                    </a>
+                        <button class="btn btn-outline-warning" onclick="showHistory()">
+                        <i class="bi bi-clock-history"></i> History</button>
+                        <button class="btn btn-danger" onclick="showCart()">
+                            <i class="bi bi-cart"></i> Cart <span id="cartCount" class="badge bg-white text-danger">0</span>
+                        </button>
+                        </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <p class="text-warning fw-bold">AUTHENTIC ITALIAN PIZZERIA</p>
+                    <h1>Crafted With Passion.<br>Baked To Perfection.</h1>
+                    <p class="mt-3">
+                        Enjoy delicious Italian pizza made with fresh ingredients and traditional recipes in
+                        Phnom Penh.
+                    </p>
+                        <a href="#menu" class="btn btn-danger mt-3">ORDER NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="text-danger fw-bold">OUR MENU</p>
+                <h2 class="section-title">Signature Pizza</h2>
+                <p>Choose your favorite Italian pizza.</p>
+            </div>
+            <div class="text-center mb-4"><button class="btn btn-danger me-2"
+                    onclick="filterPizza('all')">All</button><button class="btn btn-outline-danger me-2"
+                    onclick="filterPizza('pizza')">Pizza</button><button class="btn btn-outline-danger"
+                    onclick="filterPizza('special')">Special</button></div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 pizza" data-type="pizza">
+                    <div class="card pizza-card h-100">
+                        <img class="pizza-img" src="IMG/Top View Photo of Classic Margherita Pizza in Studio Setting Stock Photo.png" alt="Margherita">
+                        <div class="card-body">
+                            <h4>Margherita</h4>
+                            <p class="text-muted">Tomato, mozzarella and fresh basil.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$12.99</span>
+                                    <button class="btn btn-dark" onclick="addCart('Margherita',12.99)">Add</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pizza" data-type="pizza">
+                    <div class="card pizza-card h-100">
+                        <img class="pizza-img" src="IMG/Pepperoni pizza on a white background, top view, for menu royalty free stock photo.png" alt="Pepperoni">
+                        <div class="card-body">
+                            <h4>Pepperoni</h4>
+                            <p class="text-muted">Mozzarella, tomato and spicy pepperoni.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$14.99</span>
+                                <button class="btn btn-dark" onclick="addCart('Pepperoni',14.99)">Add</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pizza" data-type="special">
+                    <div class="card pizza-card h-100"><img class="pizza-img"
+                            src="IMG/pizza,mushroom,cheese,delicious,food,pisa,yellow,sausage,fast food,cut,delicious pizza,tomato,dinner,green pepper,ham,snack,vegetables,whole sheet,bacon,hot pizza.png" alt="Mushroom Pizza">
+                        <div class="card-body">
+                            <h4>Mushroom Pizza</h4>
+                            <p class="text-muted">Fresh mushrooms and mozzarella.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <spanclass="price">$15.99</span>
+                                <button class="btn btn-dark" onclick="addCart('Mushroom Pizza',15.99)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 pizza" data-type="special">
+                    <div class="card pizza-card h-100">
+                        <img class="pizza-img" src="IMG/1.png" alt="BBQ Chicken">
+                        <div class="card-body">
+                            <h4>BBQ Chicken</h4>
+                            <p class="text-muted">BBQ chicken, onion and mozzarella.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$16.99</span>
+                                <button class="btn btn-dark" onclick="addCart('BBQ Chicken',16.99)">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 pizza" data-type="pizza">
+                    <div class="card pizza-card h-100">
+                        <img class="pizza-img" src="IMG/4602327095561669696.png" alt="Spicy Diavola">
+                        <div class="card-body">
+                            <h4>Spicy Diavola</h4>
+                            <p class="text-muted">Spicy salami, chili and cheese.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$15.99</span>
+                                    <button class="btn btn-dark" onclick="addCart('Spicy Diavola',15.99)">Add</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 pizza" data-type="special">
+                    <div class="card pizza-card h-100">
+                        <img class="pizza-img" src="IMG/Burrata Pizza.png" alt="Burrata Special">
+                        <div class="card-body">
+                            <h4>Burrata Special</h4>
+                            <p class="text-muted">Burrata cheese, tomato and basil.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$18.99</span>
+                                    <button class="btn btn-dark" onclick="addCart('Burrata Special',18.99)">Add</button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="py-5">
+        <div class="container">
+            <div class="offer p-5 text-center">
+                <p class="text-warning fw-bold">SPECIAL OFFER</p>
+                <h2>Pizza Night</h2>
+                <p>Buy 2 large pizzas and get 1 classic pizza FREE!</p>
+                <button class="btn btn-danger" onclick="claimOffer()">Claim Offer</button>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="py-5 bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-md-6">
+                    <img src="IMG/download.webp" class="about-img" alt="Pizza"></div>
+                <div class="col-md-6">
+                    <p class="text-danger fw-bold">OUR STORY</p>
+                    <h2 class="section-title">A Taste Of Italy</h2>
+                    <p>Pizza Kon Khmer brings the traditional taste of Italian pizza to Phnom Penh.</p>
+                    <p>We use fresh ingredients, handmade dough and traditional cooking methods.</p>
+                    <div class="row text-center mt-4">
+                        <div class="col-6">
+                            <h2 class="text-danger">25+</h2>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="col-6">
+                            <h2 class="text-danger">50K+</h2>
+                            <p>Happy Customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Contact Us</h2>
+                <p>Have a question? Send us a message.</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control"
+                                required>
+                            </div>
+                        <div class="mb-3"><label class="form-label">Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" rows="5" required></textarea>
+                        </div>
+                            <button class="btn btn-danger">Send Message</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+        <h5 class="brand-logo-text"><span class="text-danger-accent">PIZZA</span> <span class="text-highlight">Kon
+                Khmer</span></h5>
+        <p>Authentic Italian Pizza in Phnom Penh</p><i class="bi bi-facebook mx-2"></i><i
+            class="bi bi-instagram mx-2"></i><i class="bi bi-telegram mx-2"></i>
+        <hr><small>© 2026 Pizza Kon Khmer. All Rights Reserved.</small>
+    </footer>
+    <div class="modal fade" id="cartModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Your Cart</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div id="cartModalBody" class="modal-body"></div>
+                <div class="modal-footer justify-content-between">
+                    <div>Total: <strong id="cartTotal">$0.00</strong></div>
+                    <div><button class="btn btn-secondary" onclick="clearCart()">Clear</button><button
+                            class="btn btn-danger" onclick="checkout()">Checkout</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="historyModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Order History</h5><button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Clear History -->
+                <div class="modal-body" id="historyModalBody"></div>
+                <div class="modal-footer justify-content-between"><button class="btn btn-outline-danger"
+                        onclick="clearHistory()">Clear History</button><button class="btn btn-secondary"
+                        data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

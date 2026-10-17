@@ -1,0 +1,22 @@
+body{
+background:#f8f1e6;
+color:#332820;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:20px
+}
+
+.auth-card{
+width:100%;
+max-width:420px;
+background:white;padding:32px;
+border-radius:15px;
+box-shadow:0 10px 25px #0002
+}
+
+.auth-card h2{
+font-family:Georgia,serif;
+color:#c9362b
+}
