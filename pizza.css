@@ -1,1 +1,46 @@
-body{background:#f8f1e6;color:#332820}.navbar,footer{background:#17120f;color:white}.brand-logo-text{font:800 26px Georgia,serif;color:white;text-decoration:none}.text-highlight{color:#d9a441;font-style:italic}.text-danger-accent{color:#c9362b}.nav-link{color:white!important}.nav-link:hover{color:#d9a441!important}.hero{background:linear-gradient(#140f0cbf,#140f0cbf),url("https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1600&q=80") center/cover;color:white;padding:150px 0}.hero h1{font:700 clamp(32px,5vw,55px) Georgia,serif}.hero p{font-size:18px}.section-title{font-family:Georgia,serif;font-weight:bold}.pizza-card{border:0;border-radius:15px;overflow:hidden;transition:.3s}.pizza-card:hover{transform:translateY(-7px);box-shadow:0 10px 25px #0002}.pizza-img{width:100%;height:220px;object-fit:cover}.price{color:#c9362b;font-weight:bold}.offer{background:#17120f;color:white;border-radius:20px}.about-img{width:100%;height:350px;object-fit:cover;border-radius:15px}
+body{
+    background:#f8f1e6;
+    color:#332820
+}
+.navbar,footer{
+    background:#17120f;
+    color:white
+}
+.brand-logo-text{
+    font:800 26px Georgia,serif;
+    color:white;
+    text-decoration:none
+}
+.text-highlight{
+    color:#d9a441;
+    font-style:italic
+}
+text-danger-accent{
+    color:#c9362b
+}
+.nav-link{
+    color:white!important
+}
+.nav-link:hover{
+    color:#d9a441!important
+}
+.hero{
+    background:linear-gradient(#140f0cbf,#140f0cbf),
+    url("https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1600&q=80") center/cover;
+    color:white;padding:150px 0}.hero 
+    h1{font:700 clamp(32px,5vw,55px) Georgia,serif}.hero 
+    p{font-size:18px}.section-title{font-family:Georgia,serif;
+    font-weight:bold}.pizza-card{border:0;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s}
+    .pizza-card:hover{transform:translateY(-7px);
+    box-shadow:0 10px 25px #0002}.pizza-img{width:100%;
+    height:220px;object-fit:cover}.price{color:#c9362b;
+    font-weight:bold}.offer{background:#17120f;
+     color:white;
+     border-radius:20px}
+.about-img{
+    width:100%;height:350px;
+    object-fit:cover;
+    border-radius:15px}
